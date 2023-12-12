@@ -1,0 +1,27 @@
+/* Your existing styles for Dashboard */
+
+.container {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Media Query for Mobile Devices */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h5 {
+    font-size: 18px;
+  }
+}

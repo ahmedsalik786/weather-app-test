@@ -1,0 +1,69 @@
+.container {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.title {
+  padding-top: 50px;
+  margin-top: 0;
+  text-align: center;
+  font-weight: 600;
+  color: black;
+}
+.input-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem 35%;
+}
+.search-box {
+  background-color: rgb(231, 244, 227);
+  color: black;
+  outline: none;
+  height: 1.5rem;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+}
+.btn {
+  height: 1.5rem;
+  color: white;
+  background-color: rgb(22, 22, 195);
+  border-radius: 0.5rem;
+}
+.res-box {
+  margin: 1rem;
+  border: 1px solid yellow;
+  height: 50vh;
+  width: 50vw;
+}
+
+@media screen and (max-width: 768px) {
+  .input-box {
+    padding: 1rem 10%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-box {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .res-box {
+    width: 90%;
+    height: 40vh;
+  }
+  .card-box {
+    width: 80%;
+  }
+}
