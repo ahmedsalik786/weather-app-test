@@ -46,7 +46,9 @@ function Dashboard({ city, setCity }) {
             </button>
           </div>
           <Card2 defaultWeather={defaultWeather} />
-          <Button onClick={() => navigate("/")} text={"Go to Home"} />
+          <div className="pos">
+            <Button onClick={() => navigate("/")} text={"Go to Home"} />
+          </div>
         </>
       )}
     </div>
