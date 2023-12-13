@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import bgI from "../../asset/weatherbg.jpg";
-import Card from "../../Components/Card";
 import { getdefaultWeather } from "./dashboard.action";
-// import { Button } from "@mui/material";
-import Button from "../../Components/Button";
+import Button from "../../Components/Button/Button";
 import { useNavigate } from "react-router-dom";
+import Card2 from "../card2/Card2";
 
-function Dashboard({ city }) {
+function Dashboard({ city, setCity }) {
   const [defaultWeather, setDefaultWeather] = useState({});
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -22,14 +21,31 @@ function Dashboard({ city }) {
 
   return (
     <div style={style} className="container">
-      <h2> Weather forcast of {city} </h2>
+      <h2> Weather forcast</h2>
       {loading ? (
         "Loading"
       ) : (
         <>
-          <h5>{defaultWeather.name}</h5>
-          <Card defaultWeather={defaultWeather} />
+          <div className="input-box">
+            <input
+              className="search-box"
+              placeholder="search city"
+              type="text"
+              name=""
+              id=""
+              onChange={(e) => setCity(e.target.value)}
+            />
 
+            <button
+              onClick={() =>
+                getdefaultWeather({ setDefaultWeather, setLoading, city })
+              }
+              className="btn"
+            >
+              Search
+            </button>
+          </div>
+          <Card2 defaultWeather={defaultWeather} />
           <Button onClick={() => navigate("/")} text={"Go to Home"} />
         </>
       )}

@@ -1,16 +1,14 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import "./card.css";
+import "./card.style.css";
 
 export default function BasicCard({ defaultWeather }) {
+  console.log(defaultWeather);
   return (
     <Card className="card-box" sx={{ minWidth: 200, maxWidth: 400 }}>
-      <CardContent>
+      <CardContent className="content-box">
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           Longitude:{defaultWeather.coord.lon} , Latitude:
           {defaultWeather.coord.lat}

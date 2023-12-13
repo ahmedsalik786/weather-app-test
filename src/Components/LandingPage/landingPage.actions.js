@@ -1,4 +1,5 @@
 import axios from "axios";
+import axiosInstance from "../../utils/axios";
 
 export function getLocation({ setPosition }) {
   navigator.geolocation.getCurrentPosition(
@@ -19,40 +20,13 @@ export function getLocation({ setPosition }) {
   );
 }
 
-const weatherAPI = axios.create({
-  baseURL: "https://api.openweathermap.org/data/2.5",
-});
-
-weatherAPI.interceptors.request.use(
-  (config) => {
-    // Add the API token to the request header or params
-    config.params = {
-      ...config.params,
-      APPID: "d56752efbc1e39c0d37e47f7625983a9",
-    };
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-);
-
-weatherAPI.interceptors.response.use(
-  (response) => {
-    return response.data;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-);
-
 export async function getdefaultWeather({
   setDefaultWeather,
   setLoading,
   city,
 }) {
   try {
-    const response = await weatherAPI.get(`/weather?q=${city},india`);
+    const response = await axiosInstance.get(`/weather?q=${city},india`);
     console.log("weather", response);
 
     setDefaultWeather(response);
@@ -61,3 +35,25 @@ export async function getdefaultWeather({
     console.log("error", error);
   }
 }
+
+export async function getWeatherAltitude({
+  setDefaultWeather,
+  position,
+  setLoading,
+}) {
+  const { latitude, longitude } = position;
+  console.log("lat", latitude, "lon", longitude);
+
+  try {
+    const responce = await axiosInstance.get(
+      `/weather?lat=${latitude}&lon=${longitude}`
+    );
+    console.log("responceAlt", responce);
+    setDefaultWeather(responce);
+    setLoading(false);
+  } catch (error) {
+    alert(error.message);
+  }
+}
+
+//https://api.openweathermap.org/data/2.5/weather?lat=1.4&lon=12.5&APPID=d56752efbc1e39c0d37e47f7625983a9

@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import LandingPage from "./Components/LandingPage";
-import Dashboard from "./Components/Dashboard";
+import LandingPage from "./Components/LandingPage/Landing";
+import Dashboard from "./Components/Dashboard/DashBoard";
 import { useState } from "react";
 
 function App() {
@@ -10,10 +10,16 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LandingPage  city={city} setCity={setCity} />} />
-        <Route path="/dashboard" element={<Dashboard city={city} />}  />
+        <Route
+          path="/"
+          element={<LandingPage city={city} setCity={setCity} />}
+        />
+        <Route
+          path="/dashboard"
+          element={<Dashboard city={city} setCity={setCity} />}
+        />
       </Routes>
-      </BrowserRouter>
+    </BrowserRouter>
   );
 }
 

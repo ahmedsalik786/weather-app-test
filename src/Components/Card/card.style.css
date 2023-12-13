@@ -1,0 +1,17 @@
+.card-box {
+  padding: 1rem;
+  color: white;
+  width: 60%;
+  backdrop-filter: blur(4px); /* Add backdrop filter for blur effect */
+  background-color: rgba(
+    230,
+    213,
+    213,
+    0.3
+  ); /* Use rgba with alpha for background color */
+}
+.card-box :hover {
+  transition: all 0.3;
+  cursor: pointer;
+  background-color: rgb(122, 146, 216);
+}

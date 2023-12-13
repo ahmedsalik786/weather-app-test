@@ -1,0 +1,57 @@
+.bottom-container {
+  padding: 1rem;
+  width: 80vw;
+  height: 35vh;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+.left {
+  color: white;
+  width: 30%;
+}
+.right {
+  padding: 1rem;
+  color: white;
+  width: 60%;
+  backdrop-filter: blur(4px); /* Add backdrop filter for blur effect */
+  background-color: rgba(
+    247,
+    237,
+    237,
+    0.3
+  ); /* Use rgba with alpha for background color */
+}
+
+.location {
+  position: relative;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-loc {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.temp h3 {
+  font-size: 2.5rem; /* Adjust font size */
+  margin-bottom: 0.5rem;
+}
+
+h4 {
+  margin: 0;
+  font-size: 1.5rem; /* Adjust font size */
+}
+
+h4.weather-details {
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin: 0.5rem 0;
+}
